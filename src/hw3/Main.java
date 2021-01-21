@@ -44,15 +44,21 @@ public class Main {
         System.out.println("Добро пожаловать в игру \"Угадай слово\"");
         System.out.println("Мы загадали 1 из этих слов \n"+ Arrays.toString(arr)+"\nугадай какое");
         String userAnswer;
+        int length;
         StringBuilder encryptedAnswer=new StringBuilder("###############");
         String answer=arr[new Random().nextInt(arr.length)];
         Scanner scanner= new Scanner(System.in);
         do {
             System.out.println("Введите слово и нажмите ENTER");
             userAnswer=scanner.nextLine();
-            for (int i = 0; i < answer.length(); i++) {
+            if(userAnswer.length()<answer.length()){
+                length=userAnswer.length();
+            }
+            else
+                length=answer.length();
+            for (int i = 0; i < length; i++) {
                 if(answer.charAt(i)==userAnswer.charAt(i)){
-                    encryptedAnswer.replace(i,i+1,answer.substring(i,i+1));
+                    encryptedAnswer.setCharAt(i,answer.charAt(i));
                 }
             }
             System.out.println(encryptedAnswer);
