@@ -8,18 +8,6 @@ public class Employee {
     private double salary;
     private int age;
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", position='" + position + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", salary=" + salary +
-                ", age=" + age +
-                '}';
-    }
-
     public Employee(String name, String patronymic, String surname, String position, String email, String phoneNumber, double salary, int age) {
         this.name = surname+" "+name+" "+patronymic;
         this.position = position;
@@ -75,5 +63,17 @@ public class Employee {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", position='" + position + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", salary=" + salary +
+                ", age=" + age +
+                '}';
     }
 }
