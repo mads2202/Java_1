@@ -11,7 +11,7 @@ public class PhoneBook {
     HashMap<String, HashSet<String>> phoneBook;
 
     public PhoneBook() {
-        this.phoneBook = new HashMap<>();
+         this.phoneBook = new HashMap<>();
     }
 
     public void add(String surname, String phoneNumber){

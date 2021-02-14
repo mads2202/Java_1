@@ -18,7 +18,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String[] array = {"developer", "java", "array", "collection", "software", "stack", "java", "bean", "spring",
+        String[] array = {"developer",  "java", "array", "collection", "software", "stack", "java", "bean", "spring",
                 "developer", "collection", "java", "android", "kotlin", "developer", "android", "spring", "bean", "bean", "developer"};
         System.out.println(wordCounter(array).toString());
         PhoneBook phoneBook=new PhoneBook();
