@@ -17,26 +17,30 @@ public class Main {
             arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
         }
     }
-    public static void someMultiThreadMath(float[] arr){
+    public static void someMultiThreadMath(float[] arr) throws InterruptedException {
 
         float[] leftHalf= Arrays.copyOfRange(arr,0,SIZE/2);
         float[] rightHalf= Arrays.copyOfRange(arr,SIZE/2,SIZE);
-        new Thread(()->{
+        Thread t1=new Thread(()->{
             someMath(leftHalf);
             System.arraycopy(leftHalf,0,arr,0,leftHalf.length);
 
-        }).start();
-        new Thread(()->{
+        });
+        t1.start();
+        Thread t2=new Thread(()->{
             someMath(rightHalf);
             System.arraycopy(rightHalf,0,arr,leftHalf.length,rightHalf.length);
-        }).start();
+        });
+        t2.start();
+        t1.join();
+        t2.join();
 
 
 
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         fillArr(arr);
         long startTime=System.currentTimeMillis();
         someMultiThreadMath(arr);
