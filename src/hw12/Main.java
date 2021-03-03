@@ -3,7 +3,7 @@ package hw12;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public class Main {
+public class  Main {
     static final int SIZE = 100000000;
     static final int HALF = SIZE / 2;
     static float[] arr = new float[SIZE];
